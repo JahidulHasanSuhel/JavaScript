@@ -15,3 +15,7 @@ console.log(name.concat(" is a friend of ", friend))
 let f2 = "     arif     ";
 // console.log(f2)
 console.log(f2.trim());
+
+console.log(name.charAt(3));
+console.log(name.search('uhe'))
+console.log(name.substring(1, 3))
