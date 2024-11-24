@@ -19,7 +19,7 @@ console.log(add);
 
 
 let a = "suhel";
-let name = `this is ${a}`;//this is calle string interpolation
+let name = `this is ${a}`;//this is called string interpolation
 console.log(name);
 
 let n = "suhel";

@@ -17,6 +17,8 @@
 //switch case
 const prompt = require('prompt-sync')();
 let age = prompt("what is your age ");
+age = Number.parseInt(age);
+
 switch (age){
     case '12':
         console.log("your age is 12");
