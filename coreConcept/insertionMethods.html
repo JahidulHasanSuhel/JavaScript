@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Method</title>
+</head>
+<body>
+    <div class = "container">
+        <div id = "first"> I am the first element </div>
+    </div>
+
+
+    <script>
+        // insertion methods
+        let a = document.getElementsByTagName("div")[0];
+        // a.innerHTML = a.innerHTML + "<h1> hello bro </h1>";
+
+        let div = document.createElement("div");
+        div.innerHTML = "<h2> hello world </h2>"
+        a.appendChild(div);
+
+    </script>
+</body>
+</html>
