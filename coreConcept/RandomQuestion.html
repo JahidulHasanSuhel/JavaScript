@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+</head>
+<body id = "body">
+    <ul id = "first" data = "valid">
+        <li class = "list-item">First Element</li>
+        <li class = "list-item">Second Element</li>
+        <li class = "list-item">Third Element</li>
+    </ul>
+
+    <div id = "firstDiv" >First Div </div>
+    <div>Second Div </div>
+
+
+    <table>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+        </tr>
+        <tr>
+            <td>Three</td>
+            <td>Four</td>
+        </tr>
+    </table>
+
+
+    <script>
+        //Root Node
+        // console.log(document.documentElement)
+        // console.log(document.head);
+        // console.log(document.body)
+
+        //Childrens
+        // console.log(document.body.childNodes);
+        //using for loop
+        // for(node of document.body.childNodes){
+        //     console.log(node)
+        // }
+        // // console.log(document.body.children)
+
+        // console.log(document.body.firstChild);
+        // console.log(document.body.firstElementChild);
+        // console.log(document.body.lastChild);
+        // console.log(document.body.lastElementChild);
+        
+        //conver into array
+        //let childrenOfBody = Array.from(document.body.childNodes)
+        //console.log(childrenOfBody)
+
+        //siblings
+        // let ulTag = document.body.children[0]
+        // let firstLi = ulTag.children[0]
+        // let secondLi = ulTag.children[1]
+        // console.log(secondLi.previousElementSibling.textContent);
+        // console.log(ulTag.nextElementSibling)
+
+        //table
+        // let tableTag = document.body.children[1]
+        // console.log(tableTag.tBodies[0].rows[0].cells[1].style = "background-color : cyan ")
+        // console.log(tableTag.rows)
+
+        //id search
+        // first.style.background = "pink"
+        // let ulTag = document.getElementById("first")
+        // ulTag.style.backgroundColor = "red"
+
+        //class search
+        // let listItem = document.getElementsByClassName("list-item")
+        //console.log(document.getElementsByTagName("table"))
+
+        //querySelector
+        // console.log(document.querySelector('.list-item'))
+        // console.log(document.querySelectorAll('.list-item'))
+        // let listItem = (document.querySelectorAll('ul > li:nth-child(2)'))
+        // console.log(listItem[0].textContent)
+
+        //Attributes
+        // console.log(first.getAttribute('data'))
+        // console.log(first.setAttribute('order-placed', 'pending'))
+        // console.log(first.getAttribute('order-placed'))
+        // console.log(first.hasAttribute('order-placed'))
+        // console.log(first.removeAttribute('order-placed'))
+        // console.log(first.hasAttribute('order-placed'))
+        // console.log(first.attributes)
+
+        //Creating and Removing the node elements
+        let newDiv = document.createElement('div')
+        // let newTxt = document.createTextNode('Hello World')
+        // newDiv.append(newTxt);
+        // body.append(newDiv);
+        // body.append(newTxt);
+        // body.prepend(newTxt)
+        // body.before(newDiv)
+        // body.after(newDiv)
+        // firstDiv.replaceWith(newTxt);
+        
+
+
+
+
+    </script>
+</body>
+</html>
