@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Callback_Promise</title>
+    <title>Callback</title>
 </head>
 <body>
 
@@ -11,25 +11,54 @@
 
     <script>
 
-    function getData(dataId, getNextData){
+    // function getData(dataId, getNextData){
+    //    return new Promise((resolve, reject)=>{
+    //     setTimeout( () =>{
+    //         console.log("data " + dataId);
+    //         resolve("success")
+    //         if(getNextData){
+    //             getNextData();
+    //         }
+    //     },2000)
+    //    })
+    // } we don't need getNextData. below the function
+    function getData(dataId){
+       return new Promise((resolve, reject)=>{
         setTimeout( () =>{
             console.log("data " + dataId);
-            if(getNextData){
-                getNextData();
-            }
+            resolve("success")
         },2000)
+       })
     }
-    //Callback Hell
-    getData(1, () => {
-        console.log("Loading...");
-        getData(2, () =>{
-            console.log("Loading...");
-            getData(3, ()=>{
-                console.log("Loading...");
-                getData(4);
-            });
-        });
-    });
+    //Callback Hell. we can do this with promise chain
+    // getData(1, () => {
+    //     console.log("Loading...");
+    //     getData(2, () =>{
+    //         console.log("Loading...");
+    //         getData(3, ()=>{
+    //             console.log("Loading...");
+    //             getData(4);
+    //         });
+    //     });
+    // });
+
+    //promise chain 1st way
+    // getData(1).then((res)=>{
+    //     console.log(res);
+    //     getData(2).then((res)=>{
+    //         console.log(res)
+    //     })
+    // })
+    
+    //promise chain second way
+    getData(1).then((res)=>{
+      return getData(2)
+    }).then((res)=>{
+        return getData(3);
+    }).then((res)=>{
+        console.log(res)
+    })
+
     
 
 
