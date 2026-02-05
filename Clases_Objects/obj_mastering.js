@@ -31,7 +31,7 @@ console.log(user[random])
 
 
 //constructor fn :- this will provide a name of an obj in console.
-function Car(name, model){ //constructor fn must be in capital letter
+function Car(name, model){ //constructor fn must start with capital letter
     this.name = name;
     this.model = model;
 }
@@ -47,3 +47,34 @@ const person = new Object()
 person.name = "alpha";
 person.age = 33
 console.log(person)
+
+
+
+//obj methods
+let profile = {
+    name: 'suhel',
+    company: "appsCreation",
+    message: function(){
+        console.log(`${this.name} works at ${this.company}`)
+    },
+    address: {
+        city: "dhk",
+        pin: 3333,
+        country: "bd",
+        gretting: function(){
+            console.log("welcome to bd")
+        }
+    }
+}
+
+//for...in
+for(let key in profile){
+    console.log(key)
+    console.log(profile[key])
+}
+
+profile.message()
+console.log(profile.address.country)
+profile.address.gretting()
+
+//static methods
