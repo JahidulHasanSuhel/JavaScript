@@ -77,4 +77,18 @@ profile.message()
 console.log(profile.address.country)
 profile.address.gretting()
 
-//static methods
+//entries methods->convert obj to array
+const myObj = {
+    a: "suhel",
+    b: 23
+}
+const myArr = Object.entries(myObj)
+console.log(myArr)
+
+// convert array to an obj
+const entries = new Map([
+    ["foo", "bar"],
+    ["baz", 42]
+])
+const objEntries = Object.fromEntries(entries)
+console.log(objEntries);
