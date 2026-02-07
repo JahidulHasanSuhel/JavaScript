@@ -52,4 +52,39 @@ sendEmail(student)
 // Destructure a Function Return Value
 
 
+
 // Destructuring in Loops
+const students = [
+  {
+    name: "william",
+    grade: "A",
+  },
+  {
+    name: "tom",
+    grade: "A+",
+  },
+  {
+    name: "bob",
+    grade: "A-",
+  },
+];
+
+for(let {name, grade} of students){
+    console.log(name, grade)
+}
+
+
+//optional chaining
+
+const workers = {
+  salary: {
+    bonus: 300,
+  },
+};
+
+// console.log(employee.department); //undefined
+//console.log(employee.department.name) - error
+
+const yourName = workers.department?.yourName;
+console.log(yourName);
+//this is used to reduce runtime error.. now it's give me undefined
