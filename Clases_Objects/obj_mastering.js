@@ -92,3 +92,15 @@ const entries = new Map([
 ])
 const objEntries = Object.fromEntries(entries)
 console.log(objEntries);
+
+//freeze method
+const emp = {
+    sal: 100
+}
+Object.freeze(emp)
+
+emp.sal = 200;
+
+console.log(emp)
+
+console.log(Object.isFrozen(emp))
