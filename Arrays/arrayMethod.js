@@ -14,6 +14,6 @@ console.log(num)
 let s = num.shift();//remove first element of an array
 console.log(s, num);
 
-let s1 = num.unshift(34);
+let s1 = num.unshift(34);//add elements in start of an array
 console.log(s1, num) // return new array length
 
