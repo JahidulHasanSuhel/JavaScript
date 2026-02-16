@@ -36,4 +36,29 @@
     let info2 = document.querySelectorAll("p.para");
     console.log("using query selector all", info2);
 
-    
+    //highlight text project
+    function HighlightColor(){
+        console.log("hiilighting color...")
+
+        let colorElm = document.querySelectorAll("p.para");
+
+        colorElm.forEach((elm)=>{
+            elm.style.backgroundColor = "yellow"
+        })
+
+    }
+
+
+    //search on a list
+
+    function filterList(){
+       const searchElm =  document.getElementById("searchInput");
+       const input = searchElm.value;
+
+
+       const items = document.querySelectorAll("ul#itemList li");
+
+       items.forEach((item) =>{
+       item.style.display = item.innerText.toLowerCase().includes(input.toLowerCase()) ? "block" : "none";
+       })
+    }
