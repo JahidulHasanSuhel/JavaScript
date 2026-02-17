@@ -25,8 +25,37 @@
 {
     let list = document.getElementById("myList");
     const itemToRemove = list.children[0];
-    list.removeChild(itemToRemove)
+    // list.removeChild(itemToRemove)
     // console.log(list.children);
     //list.innerText = "" -> this will remove all content.
     document.getElementById("removeMe").remove();
+}
+
+//Read, Write and Remove
+{
+    const imgElm = document.querySelector("img");
+    console.log(imgElm.getAttribute("alt"));
+
+
+    // imgElm.setAttribute("src", "imagePath.png..");//src path
+    // imgElm.setAttribute("alt", "some nice img");//alt path
+
+    imgElm.removeAttribute("height")//height will remove
+
+    imgElm.hasAttribute("src")//true
+    imgElm.hasAttribute("width")//false
+
+}
+
+//Travarsing/Navigating DOM
+{
+    //parentElement and parentNode
+    const span = document.getElementById("text");
+
+    console.log("parent element", span.parentElement.parentElement);
+    console.log("parent node", span.parentNode.parentNode);
+
+
+    //children and childNodes
+    
 }
