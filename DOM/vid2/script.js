@@ -1,7 +1,7 @@
 //Creating Elements
 {
     const pElem = document.createElement("p");
-    pElem.innerText = "this is dynamic paragraph";
+    // pElem.innerText = "this is dynamic paragraph";
     document.body.appendChild(pElem);
     // console.log(pElem);
 }
@@ -57,5 +57,34 @@
 
 
     //children and childNodes
-    
+    const mainElm = document.getElementById("title");
+
+    // console.log("Children", mainElm.children);
+    // console.log("Child Node", mainElm.childNodes);
+
+    // console.log("First Child", mainElm.firstChild);
+    // console.log("First Child Element", mainElm.firstElementChild);
+
+    const some = document.getElementById("sm1")
+    console.log("next sibling", some.nextSibling)
+    console.log("next element sibling", some.nextElementSibling)
+
+    console.log("previous", some.previousSibling)
+    console.log("previous element sibling", some.previousElementSibling)
+}
+
+//Manipulating styles
+{
+    const pElem = document.getElementById("pId");
+    console.log(pElem.style)
+    pElem.style.backgroundColor = "pink";
+}
+
+
+//Manipulating classes
+{
+    const mainDivElem = document.getElementById("title");
+    console.log(mainDivElem.className);
+    mainDivElem.className = "second-class";
+    console.log(mainDivElem.className);
 }

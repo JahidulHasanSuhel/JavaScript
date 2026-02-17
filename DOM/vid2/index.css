@@ -1,0 +1,19 @@
+.main-class{
+    font-size: large;
+    padding: 2px;
+    border: 2px solid red;
+    background-color: pink;
+    border-radius: 5px;
+}
+.second-class{
+    font-size: large;
+    padding: 2px;
+    border: 2px solid green;
+    background-color: teal;
+    border-radius: 5px;
+}
+
+.layout{
+    display: flex;
+    flex-direction: column;
+}
