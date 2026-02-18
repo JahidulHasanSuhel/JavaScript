@@ -87,4 +87,17 @@
     console.log(mainDivElem.className);
     mainDivElem.className = "second-class";
     console.log(mainDivElem.className);
+
+    //mainDivElem.classList.add("test")//it will add a class called test in the div.
+    //we can use remove, replace too
+
+}
+
+//controlling visibilities
+{
+    const pElem = document.getElementById("title");
+    // pElem.style.display = "none";
+
+    // pElem.style.visibility = "hidden";
+    pElem.style.opacity = "1"// 0 means hidden
 }
