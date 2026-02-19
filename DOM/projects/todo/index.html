@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <h2 class="header">Task Manager </h2>
+    <div class="center">
+    <input type="text" id="taskInput" placeholder="New Task">
+    <button onclick="addTask()">Add Task</button>
+
+    <input type="text" id="searchInupt" placeholder="Search Tasks..." onkeyup="filterTasks()">
+    <ul id="taskList"></ul>
+    </div>
+</body>
+</html>
