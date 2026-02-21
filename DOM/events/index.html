@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <h2>Event Handling</h2>
+    <button id="myBtn" onclick="handleClick('hello')">Click Me</button>
+    <button id="myBtn2">Click Me 2</button>
+
+
+    <button id="countBtn">Count++</button>
+
+    <hr>
+
+    <h2>Event object</h2>
+    <input type="text" name="search" id="searchId" placeholder="search...">
+
+
+    <hr>
+    <h3>event bubbling, capturing, delegation </h3>
+
+    <div id="grandParent">
+        <div id="parent">
+            <button id="child">Click Me</button>
+        </div>
+    </div>
+
+    <hr>
+    <ul id="itemList">
+        <li>item 1</li>
+        <li>item 2</li>
+    </ul>
+
+    <hr>
+    Custom event:
+    <p id="welcome">Welcome!</p>
+    <button onclick="loginUser('md suhel')">Login</button>
+</body>
+</html>
