@@ -15,3 +15,4 @@ clone.querySelector('.title').textContent = "DOM advaced topic";
 clone.querySelector('.desc').textContent = "hope you are learning something new";
 
 document.body.append(clone);
+ 
