@@ -78,6 +78,30 @@ const newPostData = {
 
 createPost(newPostData);
 
+
+// - 7. fetch() Usage: Custom Headers
+
+async function login() {
+    const API_URL = "http://localhost:3000/login";
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer secret-token",
+                "Custom-Header": "learn 40 days of JS",
+            },
+            body: JSON.stringify({ username: "tapascript", password: "hello" }),
+        });
+        const result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+login();
+
 // - 8. fetch() Usage: Updating an Entire Resource
 
 async function updatePost(postData) {
@@ -104,6 +128,8 @@ const updatePostData = {
 
 const updated = updatePost(updatePostData);
 console.log(updated);
+
+
 
 // - 9. fetch() Usage: Updating a Part of the Resource
 
