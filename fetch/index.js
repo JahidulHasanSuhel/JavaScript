@@ -7,97 +7,96 @@
 
 // 2. using async/await with fetch()
 async function fetchData(url) {
-    try {
-        const response = await fetch(url, options);
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.log(error);
-    }
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 // fetchData("http://localhost:3000/posts");
 
 // 3. fetch()- getting resources
 async function fetchPosts(url) {
-    const API_URL = "http://localhost:3000/posts";
+  const API_URL = "http://localhost:3000/posts";
 
-        try {
-            const response = await fetch(API_URL);
-            const data = await response.json();
-            console.log(data);
-        } catch (error) {
-            console.log(error);
-        }
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 fetchPosts();
 
 // - 5. fetch() Usage: Query Params
-async function fetchPostsWithComments(){
-    const API_URL = "http://localhost:3000/posts";
+async function fetchPostsWithComments() {
+  const API_URL = "http://localhost:3000/posts";
 
-    //set up query parameters
-    const queryParams = {
-        _embed: "comments",
-    }
+  //set up query parameters
+  const queryParams = {
+    _embed: "comments",
+  };
 
-    try{
-        //build a query string
-        const queryString = new URLSearchParams(queryParams).toString();
-        const url = `${API_URL}?${queryString}`;
+  try {
+    //build a query string
+    const queryString = new URLSearchParams(queryParams).toString();
+    const url = `${API_URL}?${queryString}`;
 
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-    } catch (error){
-        console.log(error);
-    }
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 fetchPostsWithComments();
 
 // - 6. fetch() Usage: Creating Resource
 async function createPost(postData) {
-    const API_URL = "http://localhost:3000/posts";
-    try {
-        const response = await fetch(API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(postData),
-        });
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    }
+  const API_URL = "http://localhost:3000/posts";
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(postData),
+    });
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const newPostData = {
-    id: crypto.randomUUID(),
-    title: "How to use fetch() API for POST?",
-    views: 0,
+  id: crypto.randomUUID(),
+  title: "How to use fetch() API for POST?",
+  views: 0,
 };
 
 createPost(newPostData);
 
-
 // - 7. fetch() Usage: Custom Headers
 
 async function login() {
-    const API_URL = "http://localhost:3000/login";
-    try {
-        const response = await fetch(API_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer secret-token",
-                "Custom-Header": "learn 40 days of JS",
-            },
-            body: JSON.stringify({ username: "tapascript", password: "hello" }),
-        });
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    }
+  const API_URL = "http://localhost:3000/login";
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer secret-token",
+        "Custom-Header": "learn 40 days of JS",
+      },
+      body: JSON.stringify({ username: "tapascript", password: "hello" }),
+    });
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 login();
@@ -105,70 +104,108 @@ login();
 // - 8. fetch() Usage: Updating an Entire Resource
 
 async function updatePost(postData) {
-    console.log("Replacing a POST Data...");
-    const API_URL =
-        "http://localhost:3000/posts/a9057951-515e-3da2-9793-af29719d0e33";
-    try {
-        const response = await fetch(API_URL, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(postData),
-        });
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    }
+  console.log("Replacing a POST Data...");
+  const API_URL =
+    "http://localhost:3000/posts/a9057951-515e-3da2-9793-af29719d0e33";
+  try {
+    const response = await fetch(API_URL, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(postData),
+    });
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const updatePostData = {
-    title: "What is 40 Days of JavaScript?",
-    views: 160,
+  title: "What is 40 Days of JavaScript?",
+  views: 160,
 };
 
 const updated = updatePost(updatePostData);
 console.log(updated);
 
-
-
 // - 9. fetch() Usage: Updating a Part of the Resource
 
 async function updateViews(viewData) {
-    console.log("Updating a View with Partial Data...");
-    const API_URL = `http://localhost:3000/posts/${viewData.id}`;
-    try {
-        const response = await fetch(API_URL, {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(viewData),
-        });
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    }
+  console.log("Updating a View with Partial Data...");
+  const API_URL = `http://localhost:3000/posts/${viewData.id}`;
+  try {
+    const response = await fetch(API_URL, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(viewData),
+    });
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const updatedPart = updateViews({
-    id: "a9057951-515e-4da2-9793-af29719d0e33",
-    views: 100,
+  id: "a9057951-515e-4da2-9793-af29719d0e33",
+  views: 100,
 });
 console.log(updatedPart);
 
 // - 10. fetch() Usage: Deleting Resource
 async function deletePost(postId) {
-    console.log("Deleting Post...");
-    const API_URL = `http://localhost:3000/posts/${postId}`;
-    try {
-        const response = await fetch(API_URL, {
-            method: "DELETE",
-        });
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    }
+  console.log("Deleting Post...");
+  const API_URL = `http://localhost:3000/posts/${postId}`;
+  try {
+    const response = await fetch(API_URL, {
+      method: "DELETE",
+    });
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const deleted = deletePost("a9057951-515e-4da2-9793-af29719d0e33");
 
+// download and cancel a request
+
+let controller;
+
+const downloadBtn = document.getElementById("dwn-btn");
+const abortBtn = document.getElementById("abrt-btn");
+
+downloadBtn.addEventListener("click", downloadFile);
+abortBtn.addEventListener("click", () => {
+  if (controller) {
+    controller.abort("User Aborted the Download Action");
+    console.warn("Download Aborted");
+  }
+});
+
+const url = "./download/random.txt";
+
+async function downloadFile() {
+  controller = new AbortController();
+  const signal = controller.signal;
+
+  try {
+    console.log("Downloading...");
+
+    setTimeout(async () => {
+      const response = await fetch(url, { signal });
+      console.log("Download Complete");
+
+      const blob = await response.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = "random.text";
+      link.click();
+      URL.revokeObjectURL(objectUrl);
+    }, 2000);
+  } catch (error) {
+    console.error(`Download error: ${error.message}`);
+  }
+}
